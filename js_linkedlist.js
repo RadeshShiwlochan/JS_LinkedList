@@ -10,4 +10,19 @@ function SinglyList() {
 	this.head = null
 }
 
+SinglyList.prototype.add = function(value) {
+	var node = new Node(value),
+	    currentNode = this.head;
 
+	if(!currentNode) {
+		this.head = node;
+		this.listLength++;
+		return node;
+	}
+
+	while(currentNode.next) 
+		currentNode = currentNode.next;
+	    
+    this.listLength++;
+    return node;    	    
+};
