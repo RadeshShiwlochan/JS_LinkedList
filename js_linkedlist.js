@@ -26,3 +26,41 @@ SinglyList.prototype.add = function(value) {
     this.listLength++;
     return node;    	    
 };
+
+SinglyList.prototype.searchNodeAt = function(position) {
+	var currentNode = this.head,
+	length = this.listLength,
+	count = 1,
+	message = {failure: "Failure:non-existence node in this List"};
+
+	if(length === 0 || position < 1 || position > length) 
+		throw new Error(message.failure);
+
+	while(count < position) {
+		currentNode = currentNode.next;
+		count++;
+	}
+
+	return currentNode;
+	
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
