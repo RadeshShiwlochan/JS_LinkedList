@@ -69,6 +69,21 @@ SinglyList.prototype.remove = function(position) {
         return deletedNode;
     }
 
+    // 3rd use-case: any other node is removed
+    while (count < position) {
+        beforeNodeToDelete = currentNode;
+        nodeToDelete = currentNode.next;
+        count++;
+    }
+ 
+    beforeNodeToDelete.next = nodeToDelete.next;
+    deletedNode = nodeToDelete;
+    nodeToDelete = null;
+    this._length--;
+ 
+    return deletedNode;
+};
+
 
 
 
